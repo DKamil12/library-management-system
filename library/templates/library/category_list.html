@@ -1,0 +1,16 @@
+{% extends 'library/base.html' %}
+
+{% block title %} Category List {% endblock %}
+
+{% block content %}
+    <div class="category-container">
+        {% for cat in category_list %}
+            <div class="cat-box">
+                <p><strong>{{ cat.name }}</strong></p>
+                <p>{{ cat.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'category-create' %}" class="link-button">Create new Category</a>
+{% endblock %}

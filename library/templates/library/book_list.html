@@ -1,0 +1,18 @@
+{% extends 'library/base.html' %}
+
+{% block title %} Book List {% endblock %}
+
+{% block content %}
+    <form method="get">
+        {{ filter }}
+        <button type="submit">Search</button>
+    </form>
+
+    {% for book in book_list %}
+        <div class="book-box">
+            <a href="{% url 'book-detail' book.pk %}">{{ book.author }}: {{ book.name }}</a>
+        </div>
+    {% endfor %}
+    
+    <a href="{% url 'book-create' %}" class="link-button">Add new book</a>
+{% endblock %}
