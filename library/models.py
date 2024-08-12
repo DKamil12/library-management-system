@@ -27,6 +27,11 @@ class Book(models.Model):
     # isbn contains of 13 digits divided by 4 '-' symbols
     isbn = models.CharField(max_length=17)
     description = models.TextField()
+    image = models.ImageField(
+        upload_to='images',
+        blank=True,
+        null=True
+    )
 
     def __str__(self) -> str:
         return f'{self.name} by {self.author}'

@@ -5,10 +5,7 @@
 {% block content %}
     <div class="category-container">
         {% for cat in category_list %}
-            <div class="cat-box">
-                <p><strong>{{ cat.name }}</strong></p>
-                <p>{{ cat.description }}</p>
-            </div>
+        <a href="{% url 'book-list' cat.name %}" class="category">{{ cat.name }}</a>
         {% endfor %}
     </div>
 

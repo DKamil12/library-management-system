@@ -3,16 +3,21 @@
 {% block title %} Book List {% endblock %}
 
 {% block content %}
-    <form method="get">
+    <a href="{% url 'book-create' %}" class="link-button">Add new book</a>
+
+    <form method="get" class="filter">
         {{ filter }}
         <button type="submit">Search</button>
     </form>
 
-    {% for book in book_list %}
+    <div class="books-container">
+        {% for book in book_list %}
         <div class="book-box">
+            {% if book.image %}
+                <img src="{{book.image.url}}" alt="image" width="100%"><br>
+            {% endif %}
             <a href="{% url 'book-detail' book.pk %}">{{ book.author }}: {{ book.name }}</a>
         </div>
-    {% endfor %}
-    
-    <a href="{% url 'book-create' %}" class="link-button">Add new book</a>
+        {% endfor %}
+    </div>
 {% endblock %}

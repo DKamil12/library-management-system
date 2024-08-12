@@ -3,7 +3,10 @@
 {% block title %} {{ book.name }} {% endblock %}
 
 {% block content %}
-    <div class="container">
+    {% if book.image %}
+        <img src="{{book.image.url}}" alt="image" width="20%"><br>
+    {% endif %}
+    <div>
         <p>{{ book.name }}</p>
         <p>Author: {{ book.author }}</p>
         <p>Category: {{ book.category }}</p>
@@ -12,6 +15,6 @@
         <p>ISBN: {{ book.isbn }}</p>
     </div>
 
-    <a href="{% url 'book-update' book.pk %}" class="link-button">Edit book info</a><br>
+    <a href="{% url 'book-update' book.pk %}" class="link-button">Edit book info</a>
     <a href="{% url 'book-delete' book.pk %}" class="link-button">Delete book</a>
 {% endblock %}

@@ -28,6 +28,9 @@ class BookListView(ListView):
     
     def get_queryset(self):
         queryset = super().get_queryset()
+        category = self.kwargs.get('category')
+        if category:
+            queryset = queryset.filter(category__name=category)
         self.filterset = BookFilter(self.request.GET, queryset)
         return self.filterset.qs
 
