@@ -3,11 +3,11 @@
 {% block title %} Category List {% endblock %}
 
 {% block content %}
+    <a href="{% url 'category-create' %}" class="link-button">Create new Category</a>
+
     <div class="category-container">
         {% for cat in category_list %}
         <a href="{% url 'book-list' cat.name %}" class="category">{{ cat.name }}</a>
         {% endfor %}
     </div>
-
-    <a href="{% url 'category-create' %}" class="link-button">Create new Category</a>
 {% endblock %}

@@ -5,6 +5,8 @@
 a {
     text-decoration: none;
     color: black;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -40,7 +42,7 @@ header .container {
 }
 
 .category-container {
-    margin-bottom: 40px;
+    margin-top: 30px;
 }
 
 .category {
@@ -83,4 +85,11 @@ input[type="text"]:focus, textarea:focus, select:focus {
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+}
+
+.book-detail-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    gap: 30px;
 }

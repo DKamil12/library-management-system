@@ -14,7 +14,9 @@
         {% for book in book_list %}
         <div class="book-box">
             {% if book.image %}
-                <img src="{{book.image.url}}" alt="image" width="100%"><br>
+                <a href="{% url 'book-detail' book.pk %}">
+                    <img src="{{ book.image.url }}" alt="{{ book.image.name }}" width="100%">
+                </a>
             {% endif %}
             <a href="{% url 'book-detail' book.pk %}">{{ book.author }}: {{ book.name }}</a>
         </div>
