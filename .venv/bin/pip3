@@ -1,4 +1,4 @@
-#!/home/dilnaz/library_management_sys/.venv/bin/python3
+#!/home/dilnaz/lms/.venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys

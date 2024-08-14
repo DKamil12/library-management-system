@@ -15,10 +15,11 @@
         <div class="book-box">
             {% if book.image %}
                 <a href="{% url 'book-detail' book.pk %}">
-                    <img src="{{ book.image.url }}" alt="{{ book.image.name }}" width="100%">
+                    <img src="{{ book.image.url }}" alt="{{ book.image.name }}">
                 </a>
             {% endif %}
-            <a href="{% url 'book-detail' book.pk %}">{{ book.author }}: {{ book.name }}</a>
+            <p>{{ book.author }}</p>
+            <a href="{% url 'book-detail' book.pk %}"><strong>{{ book.name }}</strong></a>
         </div>
         {% endfor %}
     </div>
