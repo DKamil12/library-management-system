@@ -26,10 +26,16 @@ class CategoryForBookSerializer(serializers.ModelSerializer):
         fields = ['name']
 
 
-class BookSerializer(serializers.ModelSerializer):
+class BookListSerializer(serializers.ModelSerializer):
     category = CategoryForBookSerializer(read_only=True)
     author = AuthorForBookSerializer(read_only=True)
 
+    class Meta:
+        model = Book
+        exclude = []
+
+
+class BookCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
         exclude = []

@@ -5,8 +5,9 @@ from rest_framework.routers import SimpleRouter
 
 
 router = SimpleRouter()
-router.register(r'category', CategoryAPIViewSet)
-router.register(r'book', BookAPIViewSet)
+router.register(r'authors', AuthorAPIViewSet)
+router.register(r'categories', CategoryAPIViewSet, basename='category')
+router.register(r'books', BookAPIViewSet)
 
 
 urlpatterns = [
